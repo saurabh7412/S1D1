@@ -11,6 +11,7 @@ import TextField from "@mui/material/TextField";
 import axios from "axios";
 import CircularProgress from '@mui/material/CircularProgress';
 
+
 function App() {
 
   const [desc, setDesc] = useState("");
@@ -18,6 +19,8 @@ function App() {
   const [prompt, setPrompt] = useState("");
 
   const [resp,setResp] = useState('');
+
+
 
   const handleClick =()=>{
     console.log(desc,prompt)
@@ -31,7 +34,7 @@ function App() {
     },{
       headers: {
         "Content-Type" : "application/json",
-        "Authorization" : `Bearer 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`
+        "Authorization" : `Bearer ${import.meta.env.VITE_key}`
       }
     })
     .then((res)=>{
@@ -131,4 +134,3 @@ function App() {
 
 export default App;
 
-//  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
